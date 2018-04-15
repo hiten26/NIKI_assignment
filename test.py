@@ -1,5 +1,16 @@
-import pickle
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import re, nltk
+import codecs
+import spacy
+from sklearn.metrics import accuracy_score
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from nltk.internals import find_jars_within_path
+from sklearn import svm
+import string
+import pickle
+from nltk.corpus import stopwords
 
 with open ('QuePredictor_train.pkl','rb')as f:
    vectorizer,model = pickle.load(f)
