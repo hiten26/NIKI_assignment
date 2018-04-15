@@ -1,0 +1,23 @@
+import pickle
+import pandas as pd
+
+with open ('QuePredictor_train.pkl','rb')as f:
+   vectorizer,model = pickle.load(f)
+
+new_data = pd.read_csv("final_test.csv",error_bad_lines=False)
+
+X_test = new_data["Question"]
+
+vectored =  vectorizer.transform(X_test)
+predicted_label = model.predict(vectored)
+
+new_dict = {
+
+"Question": test_data_utterance,     
+"Predicted_QType" : predicted_label
+     
+ }
+
+
+new_dict_df = pd.DataFrame(new_dict)
+new_dict_df.to_csv("results_new.csv", sep=',')
