@@ -26,7 +26,7 @@ def text_clean(corpus, keep_list):
     return cleaned_corpus
 
 
-f_train = open("../input/LabelledData (1).txt", 'r')
+f_train = open("LabelledData (1).txt", 'r')
 
 train = pd.DataFrame(f_train.readlines(), columns = ['Question'])
 train.shape
